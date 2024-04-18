@@ -68,8 +68,8 @@ class NewVisitorTest(unittest.TestCase):
         #self.assertIn('2: Give a gift to Lisi', [row.text for row in rows])
 
         # 页面再次更新，她的清单中显示了这两个待办事项
-        self.check_for_row_in_list_table('1: Buy flowers')
-        self.check_for_row_in_list_table('2: Give a gift to Lisi')
+        self.check_for_row_in_list_table('1: Buy Flowers')
+        self.check_for_row_in_list_table('5: Give a gift to Lisi')
         # 接着我们确认这个网站是否会记住她的清单
         # 她看到网站为她生成了一个唯一的URL
         self.fail('Finish the test!')
