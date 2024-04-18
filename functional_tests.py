@@ -18,9 +18,9 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
 
         # 她注意到网页的标题和头部都包含“To-Do”这个词
-        self.assertIn('To-Do', self.browser.title)
+        self.assertIn('To-Do', self.browser.title),
         header_text = self.browser.find_element(By.TAG_NAME, 'h1').text  # (1)
-        self.assertEqual('To-Do', header_text)
+        self.assertIn('To-Do', header_text)
 
         # 应用邀请她输入一个待办事项
         inputbox = self.browser.find_element(By.ID, 'id_new_item')  # (1)
@@ -43,6 +43,21 @@ class NewVisitorTest(unittest.TestCase):
 
         # 页面中又显示了一个文本框，可以输入其他的待办事项
         # 她输入了“gift to girlfriend”
-        self.fail('Finish the test!')
+        #self.fail('Finish the test!')
 
         # 页面再次更新，她的清单中显示了这两个待办事项
+        # 假设用户要创建一个文本框输入事项，可以输入"Give a gift to Lisi"
+        inputbox = self.browser.find_element(By.ID, 'id_new_item')
+        inputbox.send_keys('Give a gift to Lisi')
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+
+        # 页面刷新后显示，她的清单中显示了这两个待办事项
+        table = self.browser.find_element(By.ID, 'id_list_table')
+        rows = table.find_elements(By.TAG_NAME, 'tr')
+        self.assertIn('1: Buy flowers', [row.text for row in rows])
+        self.assertIn('2: Give a gift to Lisi', [row.text for row in rows])
+
+        # 接着我们确认这个网站是否会记住她的清单
+        # 她看到网站为她生成了一个唯一的URL
+        self.fail('Finish the test!')
