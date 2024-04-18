@@ -12,6 +12,15 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
+    def tearDown(self):
+        self.browser.quit()
+
+    def check_for_row_in_list_table(self, row_text):
+        table = self.browser.find_element(By.ID, 'id_list_table')
+        rows = table.find_elements(By.TAG_NAME, 'tr')
+        self.assertIn(row_text, [row.text for row in rows])
+    # (The rest of this method appears to be cut off in the image.)
+
     def test_can_start_a_list_and_retrieve_it_later(self):
         # 伊迪丝听说有一个很酷的在线待办事项应用
         # 她去看了这个应用的首页
@@ -53,11 +62,14 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         # 页面刷新后显示，她的清单中显示了这两个待办事项
-        table = self.browser.find_element(By.ID, 'id_list_table')
-        rows = table.find_elements(By.TAG_NAME, 'tr')
-        self.assertIn('1: Buy flowers', [row.text for row in rows])
-        self.assertIn('2: Give a gift to Lisi', [row.text for row in rows])
+        #table = self.browser.find_element(By.ID, 'id_list_table')
+        #rows = table.find_elements(By.TAG_NAME, 'tr')
+        #self.assertIn('1: Buy flowers', [row.text for row in rows])
+        #self.assertIn('2: Give a gift to Lisi', [row.text for row in rows])
 
+        # 页面再次更新，她的清单中显示了这两个待办事项
+        self.check_for_row_in_list_table('1: Buy flowers')
+        self.check_for_row_in_list_table('2: Give a gift to Lisi')
         # 接着我们确认这个网站是否会记住她的清单
         # 她看到网站为她生成了一个唯一的URL
         self.fail('Finish the test!')
