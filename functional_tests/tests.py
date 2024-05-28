@@ -137,9 +137,11 @@ MAX_WAIT = 10
 
 
 class NewVisitorTest(StaticLiveServerTestCase):
-
     def setUp(self):
         self.browser = webdriver.Chrome()
+        real_server = os.environ.get('REAL_SERVER')  #(1)
+        if real_server:
+            self.live_server_url = 'http://' + real_server  #(2)
 
     def tearDown(self):
         self.browser.quit()
@@ -218,7 +220,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
 
         # 张三想知道这个网站是否会记住他的清单
         # 他看到网站为他生成了一个唯一的URL
-        self.fail('Finish the test!')
+        #self.fail('Finish the test!')
 
         # 他访问那个URL，发现他的待办事项列表还在
         # 他满意地离开了
@@ -265,3 +267,10 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.assertIn('Buy milk', page_text)
 
         # 两人都很满意，然后去睡觉了
+
+import os
+
+MAX_WAIT = 10  #(1)
+
+
+

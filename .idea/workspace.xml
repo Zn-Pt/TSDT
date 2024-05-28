@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functional_tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/functional_tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/notes/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +212,8 @@
       <workItem from="1714028960373" duration="6466000" />
       <workItem from="1714037517915" duration="2346000" />
       <workItem from="1715237759830" duration="7301000" />
-      <workItem from="1715842736596" duration="6657000" />
+      <workItem from="1715842736596" duration="7742000" />
+      <workItem from="1716905616616" duration="1385000" />
     </task>
     <servers />
   </component>
